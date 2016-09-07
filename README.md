@@ -74,7 +74,9 @@ B.Example using with Laravel with file upload
 .......
 ....
 </form>
+```
 
+```` javascript
 <script>
 
             var isFileUpload = false;
@@ -107,6 +109,7 @@ B.Example using with Laravel with file upload
             
 
 </script>
+```
 
 In Laravel Codes
 
