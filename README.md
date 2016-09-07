@@ -112,7 +112,7 @@ B.Example using with Laravel with file upload
 ```
 
 In Laravel Codes
-
+```
 <?php
 
 
