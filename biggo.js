@@ -6,6 +6,47 @@ function removeOpacity(el){
 	$(el).css('opacity', 1);
 }
 
+function imageUploadDisplay(imageId, imagePlaceholder){
+	var fileInput = document.getElementById(imageId);
+	var fileDisplayArea = document.getElementById(imagePlaceholder);
+	fileInput.addEventListener('change', function(e) {
+		var file = fileInput.files[0];
+		var imageType = /image.*/;
+
+		if (file.type.match(imageType)) {
+		  var reader = new FileReader();
+
+		  reader.onload = function(e) {
+			fileDisplayArea.innerHTML = "";
+
+			// Create a new image.
+			var img = new Image();
+			// Set the img src property using the data URL.
+			img.width = 92;
+			img.height = 92;
+			img.src = reader.result;
+
+			// Add the image to the page.
+			fileDisplayArea.appendChild(img);
+			$(fileDisplayArea).append("<br/><hr/><label class='label label-danger' style='cursor:pointer' id='removeLogo'><i class='fa fa-trash'></i> REMOVE PHOTO</label>");
+
+		  }
+
+		  reader.readAsDataURL(file);
+		} else {
+	  	  $('#' + imagePlaceholder).html('');
+		  var $el = $('#' + imageId);
+		  $el.wrap('<form>').closest('form').get(0).reset();
+		  $el.unwrap();		
+		  fileDisplayArea.innerHTML = "<label class='label label-danger'><i class='fa fa-warning'></i> File not supported!</label>";
+		  fileDisplayArea.style.borderRadius = "4px";
+		  fileDisplayArea.style.border		 = "1px solid #ccc";
+		  fileDisplayArea.style.padding		 = "2px";
+		  return false;
+		}
+	});
+}
+
 function getParent(el, level=1){
 	if(parseInt(level) == 1){
 		return $(el).parent();
@@ -158,5 +199,6 @@ var Biggo = {
 	getParent : getParent,
 	prepareFormData : prepareFormData,
 	serializeData : serializeData,
-	isFileValueSetted : isFileValueSetted
+	isFileValueSetted : isFileValueSetted,
+	imageUploadDisplay : imageUploadDisplay
 }
