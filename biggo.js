@@ -6,7 +6,7 @@ function removeOpacity(el){
 	$(el).css('opacity', 1);
 }
 
-function imageUploadDisplay(imageId, imagePlaceholder){
+function imageUploadDisplay(imageId, imagePlaceholder, w=92, h=92, rId='removeLogo'){
 	var fileInput = document.getElementById(imageId);
 	var fileDisplayArea = document.getElementById(imagePlaceholder);
 	fileInput.addEventListener('change', function(e) {
@@ -22,14 +22,19 @@ function imageUploadDisplay(imageId, imagePlaceholder){
 			// Create a new image.
 			var img = new Image();
 			// Set the img src property using the data URL.
-			img.width = 92;
-			img.height = 92;
+			img.width = w;
+			img.height = h;
 			img.src = reader.result;
 
 			// Add the image to the page.
 			fileDisplayArea.appendChild(img);
-			//$(fileDisplayArea).append("<br/><hr/><label class='label label-danger' style='cursor:pointer' id='removeLogo'><i class='fa fa-trash'></i> REMOVE PHOTO</label>");
-
+			$(fileDisplayArea).append("<br/><hr/><label class='label label-danger' style='cursor:pointer' id=rId><i class='fa fa-trash'></i> REMOVE PHOTO</label>");
+			$('body').on('click', '#' + rId, function(){
+				$('#' + imagePlaceholder).html('');
+				var $el = $('#' + imageId);
+				$el.wrap('<form>').closest('form').get(0).reset();
+				$el.unwrap();
+			});
 		  }
 
 		  reader.readAsDataURL(file);
