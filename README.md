@@ -24,10 +24,12 @@ it was written on top of jquery methods
 
 ### Usage
 ##### 1. Jquery Ajax Method
-`<script src="//code.jquery.com/jquery.js"></script>`
-`<script src="https://rawgit.com/Biggo6/biggojs/master/biggo.js"></script>`
-.....
-.....
+```
+<script src="//code.jquery.com/jquery.js"></script>
+<script src="https://rawgit.com/Biggo6/biggojs/master/biggo.js"></script>
+
+```
+
 ```javascript
 <script>
 $(function(){
@@ -37,6 +39,7 @@ $(function(){
     });
 });
 </script>
+
 ```
 
 A.Example using with Laravel without file upload
