@@ -37,7 +37,9 @@ $(function(){
 </script>
 ```
 
-Example using with Laravel withoud file upload
+A.Example using with Laravel without file upload
+------
+
 ```javascript
 <script>
 
@@ -55,5 +57,66 @@ $(function(){
 });
 </script>
 ```
+
+B.Example using with Laravel with file upload
+------
+
+```
+<form id="userForm">
+.....
+.....
+<input type="file" name="photo" id="photo" />
+.......
+....
+</form>
+
+<script>
+
+            var isFileUpload = false;
+            var data;
+            if(Biggo.isFileValueSetted(photo) != undefined){
+                var arr  = Biggo.serializeData(userForm);
+                var arr2 = ["photo"];
+                isFileUpload = true;
+                data = Biggo.prepareFormData(arr, arr2);
+            }else{
+                data = Biggo.serializeData(userForm);
+            }
+
+           
+            Biggo.talkToServer('{{route("users.store")}}', data, isFileUpload).then(function(res){
+                
+                
+                if(res.error){
+                    Biggo.showFeedBack(userForm, res.msg, res.error);
+                }else{
+                    if(register == "save"){
+                        window.location = "{{route('users.redirectWith')}}";
+                    }else{
+                        $('#form_reg')[0].reset();
+                        Biggo.showFeedBack(userForm, res.msg, res.error);
+                    }
+                                                                                                                                                                                                                                                                                                                      
+                }
+            });
+            
+
+</script>
+
+In Laravel Codes
+
+<?php
+
+
+if (Input::hasFile('photo')) {
+    // working with photo
+} 
+
+
+```
+
+# Contribution
+
+You are invited to contribute to this library in the following section :- <i>good documentation, code refactoring and coding your ideas </i> 
 
 
