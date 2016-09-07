@@ -28,7 +28,7 @@ function imageUploadDisplay(imageId, imagePlaceholder){
 
 			// Add the image to the page.
 			fileDisplayArea.appendChild(img);
-			$(fileDisplayArea).append("<br/><hr/><label class='label label-danger' style='cursor:pointer' id='removeLogo'><i class='fa fa-trash'></i> REMOVE PHOTO</label>");
+			//$(fileDisplayArea).append("<br/><hr/><label class='label label-danger' style='cursor:pointer' id='removeLogo'><i class='fa fa-trash'></i> REMOVE PHOTO</label>");
 
 		  }
 
