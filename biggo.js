@@ -1,3 +1,65 @@
+function changePhotoDiv(target='appLogo', placeholder='logo-placeholder', width=250, height=250, imgsrc){
+	
+
+	
+	var fileInput = document.getElementById(target);
+	var fileDisplayArea = document.getElementById(placeholder);
+
+	if(imgsrc != ""){
+			fileDisplayArea.innerHTML = "";
+
+			// Create a new image.
+			var img = new Image();
+			// Set the img src property using the data URL.
+			img.width = 250;
+			img.height = 250;
+			img.src = imgsrc;
+
+			// Add the image to the page.
+			fileDisplayArea.appendChild(img);
+			$(fileDisplayArea).append("<br/><hr/><label class='label label-danger' style='cursor:pointer' id='removeLogo'><i class='fa fa-trash'></i> REMOVE PHOTO</label>");
+	}
+
+
+	fileInput.addEventListener('change', function(e) {
+		var file = fileInput.files[0];
+		var imageType = /image.*/;
+
+		if (file.type.match(imageType)) {
+		  var reader = new FileReader();
+
+		  reader.onload = function(e) {
+			fileDisplayArea.innerHTML = "";
+
+			// Create a new image.
+			var img = new Image();
+			// Set the img src property using the data URL.
+			img.width = 250;
+			img.height = 250;
+			img.src = reader.result;
+
+			// Add the image to the page.
+			fileDisplayArea.appendChild(img);
+			$(fileDisplayArea).append("<br/><hr/><label class='label label-danger' style='cursor:pointer' id='removeLogo'><i class='fa fa-trash'></i> REMOVE PHOTO</label>");
+
+		  }
+
+		  reader.readAsDataURL(file);
+		} else {
+		  $('#logo-placeholder').html('');
+		  var $el = $('#' + target);
+		  $el.wrap('<form>').closest('form').get(0).reset();
+		  $el.unwrap();     
+		  fileDisplayArea.innerHTML = "<label class='label label-danger'><i class='fa fa-warning'></i> File not supported!</label>";
+		  fileDisplayArea.style.borderRadius = "4px";
+		  fileDisplayArea.style.border       = "1px solid #ccc";
+		  fileDisplayArea.style.padding      = "2px";
+		  return false;
+		}
+	});
+}
+
+
 
 function applyOpacity(el, value=0.2){
 	return $(el).css('opacity', parseFloat(value));
@@ -205,5 +267,6 @@ var Biggo = {
 	prepareFormData : prepareFormData,
 	serializeData : serializeData,
 	isFileValueSetted : isFileValueSetted,
-	imageUploadDisplay : imageUploadDisplay
+	imageUploadDisplay : imageUploadDisplay,
+	changePhotoDiv : changePhotoDiv
 }
