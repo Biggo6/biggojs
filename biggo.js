@@ -42,11 +42,18 @@ function changePhotoDiv(target='appLogo', placeholder='logo-placeholder', width=
 			fileDisplayArea.appendChild(img);
 			$(fileDisplayArea).append("<br/><hr/><label class='label label-danger' style='cursor:pointer' id='removeLogo'><i class='fa fa-trash'></i> REMOVE PHOTO</label>");
 
+			$('body').on('click', '#removeLogo', function(){
+				$('#' + placeholder).html('');
+		  		var $el = $('#' + target);
+		  		$el.wrap('<form>').closest('form').get(0).reset();
+		  		$el.unwrap();   
+			});
+
 		  }
 
 		  reader.readAsDataURL(file);
 		} else {
-		  $('#logo-placeholder').html('');
+		  $('#' + placeholder).html('');
 		  var $el = $('#' + target);
 		  $el.wrap('<form>').closest('form').get(0).reset();
 		  $el.unwrap();     
