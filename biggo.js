@@ -155,11 +155,11 @@ function showFeedBack(el, str, error=true, url=null){
 
 	if(url != null){
 		if(!error){
-			var newDiv = $('<div/>').addClass('alert alert-success flush').html('<h5><i class="fa fa-check-circle"></i> ' + str + '</h5>').delay(4000).fadeOut('normal', function(){
+			var newDiv = $('<div/>').addClass('alert alert-success flush').html('<h5><i class="fa fa-check-circle"></i> ' + str + '</h5>').delay(8000).fadeOut('normal', function(){
 					window.location = url;
 			});
 		}else{
-			var newDiv = $('<div/>').addClass('alert alert-danger flush').html('<h5><i class="fa fa-close"></i> ' + str + '</h5>').delay(4000).fadeOut('normal', function(){
+			var newDiv = $('<div/>').addClass('alert alert-danger flush').html('<h5><i class="fa fa-close"></i> ' + str + '</h5>').delay(8000).fadeOut('normal', function(){
 					window.location = url;
 			});	
 		}
@@ -167,9 +167,9 @@ function showFeedBack(el, str, error=true, url=null){
 	}else{
 
 		if(!error){
-			var newDiv = $('<div/>').addClass('alert alert-success flush').html('<h5><i class="fa fa-check-circle"></i> ' + str + '</h5>').delay(1000).fadeOut();
+			var newDiv = $('<div/>').addClass('alert alert-success flush').html('<h5><i class="fa fa-check-circle"></i> ' + str + '</h5>').delay(8000).fadeOut();
 		}else{
-			var newDiv = $('<div/>').addClass('alert alert-danger flush').html('<h5><i class="fa fa-close"></i> ' + str + '</h5>').delay(1000).fadeOut();	
+			var newDiv = $('<div/>').addClass('alert alert-danger flush').html('<h5><i class="fa fa-close"></i> ' + str + '</h5>').delay(8000).fadeOut();	
 		}
 	  	$(el).before(newDiv);
 
