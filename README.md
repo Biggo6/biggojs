@@ -1,4 +1,3 @@
-[![biggojs.png](https://s12.postimg.org/owpt9q2bh/biggojs.png)](https://postimg.org/image/8lppdeptl/)
 # BiggoJs 
 
 ###### humanize the interaction between jquery and php apps i.e Laravel framework apps 
@@ -76,7 +75,7 @@ B.Example using with Laravel with file upload
 </form>
 ```
 
-```` javascript
+````javascript
 <script>
 
             var isFileUpload = false;
@@ -111,7 +110,9 @@ B.Example using with Laravel with file upload
 </script>
 ```
 
-In Laravel Codes
+# In Laravel Codes
+------
+
 ```
 <?php
 
@@ -123,8 +124,6 @@ if (Input::hasFile('photo')) {
 
 ```
 
-# Contribution
 
-You are invited to contribute to this library in the following section :- <i>good documentation, code refactoring and coding your ideas </i> 
 
 
