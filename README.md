@@ -13,19 +13,14 @@ it was written on top of jquery methods
 
 <p>Then follows biggo.js </p>
 
-### Use this URL in production
 
-`<script src="https://cdn.rawgit.com/izwebhub/biggojs/master/biggo.js"></script>`
 
-### Use this URL for development
-
-`<script src="https://rawgit.com/izwebhub/biggojs/master/biggo.js"></script>`
 
 ### Usage
 ##### 1. Jquery Ajax Method
 ```
 <script src="//code.jquery.com/jquery.js"></script>
-<script src="https://rawgit.com/izwebhub/biggojs/master/biggo.js"></script>
+<script src="/js/biggo.js"></script>
 
 ```
 
