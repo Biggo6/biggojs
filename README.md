@@ -1,9 +1,6 @@
 # BiggoJs 
 
-###### humanize the interaction between jquery and php apps i.e Laravel framework apps 
-
-the library that enhances humanly way  of programming php apps using jquery
-it was written on top of jquery methods
+###### Using jQuery Behind the scene
 
 # Installation 
 
