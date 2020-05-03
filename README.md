@@ -16,17 +16,17 @@ it was written on top of jquery methods
 
 ### Use this URL in production
 
-`<script src="https://cdn.rawgit.com/Biggo6/biggojs/master/biggo.js"></script>`
+`<script src="https://cdn.rawgit.com/izwebhub/biggojs/master/biggo.js"></script>`
 
 ### Use this URL for development
 
-`<script src="https://rawgit.com/Biggo6/biggojs/master/biggo.js"></script>`
+`<script src="https://rawgit.com/izwebhub/biggojs/master/biggo.js"></script>`
 
 ### Usage
 ##### 1. Jquery Ajax Method
 ```
 <script src="//code.jquery.com/jquery.js"></script>
-<script src="https://rawgit.com/Biggo6/biggojs/master/biggo.js"></script>
+<script src="https://rawgit.com/izwebhub/biggojs/master/biggo.js"></script>
 
 ```
 
@@ -50,9 +50,9 @@ A.Example using with Laravel without file upload
 
 var url = '{{route("users.store")}}';
 var data = {
-    "firstname" : "Joram",
-    "lastname"  : "Kimata",
-    "email"     : "jkimata@biggojs.com"
+    "firstname" : "Joe",
+    "lastname"  : "Doe",
+    "email"     : "joedoe@biggojs.com"
 }
 $(function(){
     var biggo = Biggo.talkToServer(url, data);
